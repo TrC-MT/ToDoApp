@@ -41,6 +41,7 @@ input{
     color: #2E9E7E;
     border: 2px solid #614B34;
     border-radius: 5px;
+    transition-duration: .5s;
 }
 input:hover{
     border: 2px solid #800000;
@@ -63,7 +64,13 @@ button{
     color: #D1284F;
     border: 1px solid #614B34;
     border-radius: 3px;
+    transition-duration: .5s;
 }
+button:hover{
+    background-color: #D1284F;
+    color: #2E9E7E;
+}
+
 #listbutton{
     margin-left: 2%;
 }
