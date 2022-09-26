@@ -18,10 +18,10 @@ listObject1:{
 
 //====================================================================================
 
-let ListsObject = {  //This is where I store my lists
+let ListsObject = {  //This is where the lists are stored
   listObject1:{     //This is an example list
     name: "Example List",  //This is what the list is called on the page
-    items: [  //This is where I store the items
+    items: [  //This is where the items in the list are stored
         {
             item: "Example item one",  //This is an example item
             completed: false,  
@@ -34,9 +34,9 @@ let ListsObject = {  //This is where I store my lists
 
 let currentList = ListsObject[Object.keys(ListsObject)[0]];  //This is what chooses what list is shown. It starts off as the first list, in this case the example list.
 
-var ListObjectName = "a0";  //This is how I initially set up what the lists are called in the code
+var ListObjectName = "a0";  //This is what initially sets up what the lists are called in the code
 alert("About to render!")
-render();   //I start of by rendering the page
+render();   //It starts of by rendering the page
 
 //------------------------------------------------------------------------
 
@@ -75,7 +75,7 @@ function render() {  //This function is what displays the lists and items on the
   //   localStorage.setItem('lists', JSON.stringify(lists));
   //  }
 
-   function AddList() { //This function is what allows you to add a list to the object
+   function AddList() { //This function is what allows the user to add a list to the object
 
     ListObjectName += "1a" //This is what allows a new list to be formed in the code. It is not shown on the page
 
