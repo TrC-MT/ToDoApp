@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDoApp</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div class="left">
+        <div class="addlists">
+                <input type="text" id="inputAddLists"  placeholder="Type a new list here.">
+                <button onclick="AddList()" id="listbutton">ADD LIST</button>
+        </div>
+        <nav id="nav">
+            <div class="list">
+                
+            </div>
+        </nav>
+    </div>
+    <main>
+        <div class="mainContainer">
+            <div id="heading">
+                Name of current list
+            </div>
+            <div class="additems">
+                <input type="text" id="inputAddItems" placeholder="Type a new item here.">
+                <button onclick="AddItem()">ADD ITEM</button>
+            </div>
+            <div id="items">
+                <div class="item">
+                    
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
