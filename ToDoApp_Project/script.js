@@ -31,7 +31,7 @@ let ListsObject = {  //This is where the lists are stored
 }
 
 //----------------------------------------------------------------
-var currentList = ListsObject[Object.keys(ListsObject)[sl]];  //This is what chooses what list is shown. It starts off as the first list, in this case the example list.
+var currentList = ListsObject[Object.keys(ListsObject)[0]];  //This is what chooses what list is shown. It starts off as the first list, in this case the example list.
 
 var ListObjectName = "a0";  //This is what initially sets up what the lists are called in the code
 
@@ -43,14 +43,16 @@ render();   //It starts of by rendering the page
 
 function render() {  //This function is what displays the lists and items on the page
 
+  console.log(ListsObject);
+
     // this will hold the html that will be displayed in the sidebar
     let listsHtml = `<div id="notNav">`;
 
     // iterate through the lists to get their names
-    var sl = 0;
+    sl = 0;
     Object.keys(ListsObject).forEach((list) => {
       sl += 1
-      listsHtml += `<div class="list" data-whatlist="b${sl}">${ListsObject[list].name}</div>`;
+      listsHtml += `<div class="list" data-whatlist="${sl}">${ListsObject[list].name}</div>`;
     });
    
     listsHtml += '</div>';
@@ -78,7 +80,6 @@ function render() {  //This function is what displays the lists and items on the
     // print out the todos
     document.getElementById('items').innerHTML = todosHtml;
 
-    console.log(ListsObject);
     // save();
    }
 
@@ -116,45 +117,12 @@ function render() {  //This function is what displays the lists and items on the
     }
    }
 
-   function GrabValue(){
-
+   function GrabValue(evt){
+      var WhichList = evt.target.getAttribute("data-whatlist")
+      var WhichIndexList = WhichList - 1
+      currentList = ListsObject[Object.keys(ListsObject)[WhichIndexList]]
+      render();
    }
 
 
 //=========================================================================================
-
-// function AddList(){
-//     let ListName = document.getElementById("inputAddLists").value;
-    
-//     var newList = getListAsHTML(ListName)
-    
-//     function getListAsHTML(ListName){
-//         return `
-//             <div class="list">${ListName}</div>
-//         `
-//     }
-
-//     let Nav = document.getElementById("nav")
-
-//     Nav.innerHTML = Nav.innerHTML + newList
-// }
-
-// function AddItem(){
-//     let ItemName = document.getElementById("inputAddItems").value;
-//     console.log("ItemName:")
-//     console.log(ItemName)
-
-//     var newItem = getItemAsHTML(ItemName)
-//     console.log("newItem:")
-//     console.log(newItem)
-
-//     function getItemAsHTML(ItemName){
-//         return `<div class="item">${ItemName}</div>`
-//     }
-
-//     let Items = document.getElementById("items")
-//     console.log("Items:")
-//     console.log(Items)
-
-//     Items.innerHTML = Items.innerHTML + newItem
-// }
