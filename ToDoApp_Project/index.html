@@ -9,32 +9,39 @@
     <script defer src="script.js"></script>
 </head>
 <body>
-    <div class="left">
-        <div class="addlists">
-                <input type="text" id="inputAddLists"  placeholder="Type a new list here.">
-                <button onclick="AddList()" id="listbutton">ADD LIST</button>
-        </div>
-        <nav id="nav">
-            <div class="list">
-                
+    <header>
+        <button class="storage" onclick="dataRestore()">Restore</button>
+        <button class="storage" onclick="save()">Save</button>
+        <button class="storage" onclick="dataDelete()">Delete</button>
+    </header>
+    <div class="container">
+        <div class="left">
+            <div class="addlists">
+                    <input type="text" id="inputAddLists"  placeholder="Type a new list here.">
+                    <button onclick="AddList()" id="listbutton">ADD LIST</button>
             </div>
-        </nav>
-    </div>
-    <main>
-        <div class="mainContainer">
-            <div id="heading">
-                
-            </div>
-            <div class="additems">
-                <input type="text" id="inputAddItems" placeholder="Type a new item here.">
-                <button onclick="AddItem()">ADD ITEM</button>
-            </div>
-            <div id="items">
-                <div class="item">
+            <nav id="nav">
+                <div class="list">
                     
                 </div>
-            </div>
+            </nav>
         </div>
-    </main>
+        <main>
+            <div class="mainContainer">
+                <div id="heading">
+                    
+                </div>
+                <div class="additems">
+                    <input type="text" id="inputAddItems" placeholder="Type a new item here.">
+                    <button onclick="AddItem()">ADD ITEM</button>
+                </div>
+                <div id="items">
+                    <div class="item">
+                        
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
 </body>
 </html>

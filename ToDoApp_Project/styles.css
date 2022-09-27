@@ -4,9 +4,35 @@
 body{
     background-color: #1C0E04;
     margin: 0px;
+    width: 100%;
+}
+.container{
     display: flex;
     width: 100%;
 }
+
+header{
+    width: 100%;
+    height: 50px;
+    background-color: #422209;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+button.storage{
+    height: 35px;
+    margin-left: 2%;
+    background-color: #06378F;
+    font-weight: bold;
+}
+button.storage:hover{
+    background-color: #228F5F;
+    color: #8F3222;
+}
+
+
+
 .left{
     width: 20%;
     background-color: #104210;

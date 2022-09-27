@@ -82,11 +82,6 @@ function render() {  //This function is what displays the lists and items on the
     // save();
    }
 
-  //  function save() {
-  //   localStorage.setItem('currentList', JSON.stringify(currentList)); 
-  //   localStorage.setItem('lists', JSON.stringify(lists));
-  //  }
-
    function AddList() { //This function is what allows the user to add a list to the object
 
     ListObjectName += "1a" //This is what allows a new list to be formed in the code. It is not shown on the page
@@ -124,6 +119,21 @@ function render() {  //This function is what displays the lists and items on the
    }
 
 
+
+
+   function save() {
+    localStorage.setItem('currentList', JSON.stringify(currentList)); 
+    localStorage.setItem('lists', JSON.stringify(ListsObject));
+   }
+    function dataDelete(){
+      localStorage.removeItem('currentList')
+      localStorage.removeItem('lists')
+    }
+    function dataRestore(){
+      currentList = JSON.parse(localStorage.getItem('currentList'))
+      ListsObject = JSON.parse(localStorage.getItem('lists'))
+      render();
+    }
 //=========================================================================================
 
 
