@@ -31,10 +31,15 @@ let ListsObject = {  //This is where the lists are stored
 }
 
 //----------------------------------------------------------------
-
-let currentList = ListsObject[Object.keys(ListsObject)[0]];  //This is what chooses what list is shown. It starts off as the first list, in this case the example list.
+var sl = 0;
+var currentList = ListsObject[Object.keys(ListsObject)[sl]];  //This is what chooses what list is shown. It starts off as the first list, in this case the example list.
 
 var ListObjectName = "a0";  //This is what initially sets up what the lists are called in the code
+
+
+
+
+
 alert("About to render!")
 render();   //It starts of by rendering the page
 
@@ -66,7 +71,7 @@ function render() {  //This function is what displays the lists and items on the
     // print out the todos
     document.getElementById('items').innerHTML = todosHtml;
 
-
+    console.log(ListsObject);
     // save();
    }
 
