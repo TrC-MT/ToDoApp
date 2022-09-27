@@ -48,14 +48,14 @@ render();   //It starts of by rendering the page
 function render() {  //This function is what displays the lists and items on the page
 
     // this will hold the html that will be displayed in the sidebar
-    let listsHtml = `<nav id="nav">`;
+    let listsHtml = `<div class="notNav">`;
 
     // iterate through the lists to get their names
     Object.keys(ListsObject).forEach((list) => {
       listsHtml += `<div class="list">${ListsObject[list].name}</div>`;
     });
    
-    listsHtml += '</nav>';
+    listsHtml += '</div>';
     // print out the lists
    
     document.getElementById('nav').innerHTML = listsHtml;
@@ -64,10 +64,12 @@ function render() {  //This function is what displays the lists and items on the
     document.getElementById('heading').innerText = currentList.name;
     // iterate over the todos in the current list
    
-    let todosHtml = '<div id="items">';
+    let todosHtml = '<div class="notItems">';
     currentList.items.forEach((list) => {
       todosHtml += `<div class="item">${list.item}</div>`;
     });
+
+    todosHtml += `</div>`
     // print out the todos
     document.getElementById('items').innerHTML = todosHtml;
 
