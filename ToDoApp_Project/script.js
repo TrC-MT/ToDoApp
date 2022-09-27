@@ -31,13 +31,9 @@ let ListsObject = {  //This is where the lists are stored
 }
 
 //----------------------------------------------------------------
-var sl = 0;
 var currentList = ListsObject[Object.keys(ListsObject)[sl]];  //This is what chooses what list is shown. It starts off as the first list, in this case the example list.
 
 var ListObjectName = "a0";  //This is what initially sets up what the lists are called in the code
-
-
-
 
 
 alert("About to render!")
@@ -48,17 +44,26 @@ render();   //It starts of by rendering the page
 function render() {  //This function is what displays the lists and items on the page
 
     // this will hold the html that will be displayed in the sidebar
-    let listsHtml = `<div class="notNav">`;
+    let listsHtml = `<div id="notNav">`;
 
     // iterate through the lists to get their names
+    var sl = 0;
     Object.keys(ListsObject).forEach((list) => {
-      listsHtml += `<div class="list">${ListsObject[list].name}</div>`;
+      sl += 1
+      listsHtml += `<div class="list" data-whatlist="b${sl}">${ListsObject[list].name}</div>`;
     });
    
     listsHtml += '</div>';
     // print out the lists
    
     document.getElementById('nav').innerHTML = listsHtml;
+
+    // Adding an event listener to the notNav
+    let Ear = document.getElementById("notNav")
+    Ear.addEventListener('click', GrabValue)
+
+
+
     // print out the name of the current list
    
     document.getElementById('heading').innerText = currentList.name;
@@ -109,6 +114,10 @@ function render() {  //This function is what displays the lists and items on the
       },)
       render();
     }
+   }
+
+   function GrabValue(){
+
    }
 
 
