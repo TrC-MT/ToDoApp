@@ -65,7 +65,6 @@ function render() {  //This function is what displays the lists and items on the
     Ear.addEventListener('click', GrabValue)
 
 
-
     // print out the name of the current list
    
     document.getElementById('heading').innerText = currentList.name;
@@ -126,3 +125,5 @@ function render() {  //This function is what displays the lists and items on the
 
 
 //=========================================================================================
+
+
