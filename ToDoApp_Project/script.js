@@ -35,7 +35,7 @@ var currentList = ListsObject[Object.keys(ListsObject)[0]];  //This is what choo
 
 var ListObjectKeyname = "a0";  //This is what initially sets up what the lists are called in the code
 
-var error = False;
+var error = false;
 
 alert("About to render!")
 render();   //It starts of by rendering the page
@@ -43,7 +43,7 @@ render();   //It starts of by rendering the page
 //------------------------------------------------------------------------
 
 function render() {  //This function is what displays the lists and items on the page
-  if (error == False){
+  if (error == false){
     
     // this will hold the html that will be displayed in the sidebar
     let listsHtml = `<div id="notNav">`;
@@ -83,6 +83,8 @@ function render() {  //This function is what displays the lists and items on the
   }
   else{ // if error == True;
     //render an error page
+    document.getElementById("nav").innerHTML = `<h1>Error: no lists!</h1>`
+    document.getElementById("heading").innerHTML = `<h1>Error: no lists!</h1>`
   }
 }
 
