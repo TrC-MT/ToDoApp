@@ -33,8 +33,9 @@ let ListsObject = {  //This is where the lists are stored
 //----------------------------------------------------------------
 var currentList = ListsObject[Object.keys(ListsObject)[0]];  //This is what chooses what list is shown. It starts off as the first list, in this case the example list.
 
-var ListObjectName = "a0";  //This is what initially sets up what the lists are called in the code
+var ListObjectKeyname = "a0";  //This is what initially sets up what the lists are called in the code
 
+var error = False;
 
 alert("About to render!")
 render();   //It starts of by rendering the page
@@ -42,9 +43,8 @@ render();   //It starts of by rendering the page
 //------------------------------------------------------------------------
 
 function render() {  //This function is what displays the lists and items on the page
-  console.log("ListsObject at the beginning of render:")
-  console.log(ListsObject);
-
+  if (error == False){
+    
     // this will hold the html that will be displayed in the sidebar
     let listsHtml = `<div id="notNav">`;
 
@@ -79,17 +79,21 @@ function render() {  //This function is what displays the lists and items on the
     // print out the todos
     document.getElementById('items').innerHTML = todosHtml;
 
-    // save();
-   }
+    save();
+  }
+  else{ // if error == True;
+    //render an error page
+  }
+}
 
    function AddList() { //This function is what allows the user to add a list to the object
 
-    ListObjectName += "1a" //This is what allows a new list to be formed in the code. It is not shown on the page
+    ListObjectKeyname += "1a" //This is what allows a new list to be formed in the code. It is not shown on the page
 
     // get the list text from the list input box
     const list = document.getElementById("inputAddLists").value;
     if(list) {
-      ListsObject[ListObjectName] = {
+      ListsObject[ListObjectKeyname] = {
         name: list,
         items: []
       },
@@ -137,7 +141,7 @@ it puts them into a new object, coverted back to the old object. */
       WhichIndexList += 1
       if ((currentList = ListsObject[Object.keys(ListsObject)[WhichIndexList]]) == undefined){
         WhichIndexList = 0
-        // error();
+        error = True;
       }
     }
     else{
