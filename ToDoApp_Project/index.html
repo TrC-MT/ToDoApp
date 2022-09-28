@@ -10,6 +10,7 @@
 </head>
 <body>
     <header>
+        <h3>Your data:</h3>
         <button class="storage" onclick="dataRestore()">Restore</button>
         <button class="storage" onclick="save()">Save</button>
         <button class="storage" onclick="dataDelete()">Delete</button>
@@ -31,6 +32,7 @@
                 <div id="heading">
                     
                 </div>
+                <button class="deleteList" onclick="DeleteCurrentList()">Delete list</button>
                 <div class="additems">
                     <input type="text" id="inputAddItems" placeholder="Type a new item here.">
                     <button onclick="AddItem()">ADD ITEM</button>

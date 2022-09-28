@@ -118,6 +118,9 @@ function render() {  //This function is what displays the lists and items on the
       render();
    }
 
+   function DeleteCurrentList(){
+    
+   }
 
 
 
