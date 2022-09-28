@@ -42,7 +42,7 @@ render();   //It starts of by rendering the page
 //------------------------------------------------------------------------
 
 function render() {  //This function is what displays the lists and items on the page
-
+  console.log("ListsObject at the beginning of render:")
   console.log(ListsObject);
 
     // this will hold the html that will be displayed in the sidebar
@@ -111,15 +111,43 @@ function render() {  //This function is what displays the lists and items on the
     }
    }
 
+   // Warning! Global variable undefined here.
+   var WhichIndexList;
+    // Warning! Global variable undefined here.
+
    function GrabValue(evt){
-      var WhichList = evt.target.getAttribute("data-whatlist")
-      var WhichIndexList = WhichList - 1
+      WhichList = evt.target.getAttribute("data-whatlist")
+      WhichIndexList = WhichList - 1
       currentList = ListsObject[Object.keys(ListsObject)[WhichIndexList]]
       render();
    }
 
-   function DeleteCurrentList(){
-    
+   function DeleteCurrentList(){ //The instructor (Scott) helped build this out for me.
+/* It basically takes the ListsObject, converts it to an array with [[key], [value]].
+Then it checks the values, and if they're not equal to the currentList that we're deleting,
+it puts them into a new object, coverted back to the old object. */
+    ListsObject = Object.entries(ListsObject).reduce((accum, [key, value]) => {
+      const isKeep = value !== currentList;
+
+      return isKeep ? { ...accum, [key]: value }: accum
+    }, {})
+    //end of instructors code
+
+    if (WhichIndexList-1 == -1){
+      WhichIndexList += 1
+      if ((currentList = ListsObject[Object.keys(ListsObject)[WhichIndexList]]) == undefined){
+        WhichIndexList = 0
+        // error();
+      }
+    }
+    else{
+      WhichIndexList -= 1
+    }
+
+    currentList = ListsObject[Object.keys(ListsObject)[WhichIndexList]]
+
+
+    render();
    }
 
 
