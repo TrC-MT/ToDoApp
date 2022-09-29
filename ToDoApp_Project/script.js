@@ -81,10 +81,10 @@ function render() {  //This function is what displays the lists and items on the
 
     save();
   }
-  else{ // if error == True;
+  else{ // if error == true;
     //render an error page
     document.getElementById("nav").innerHTML = `<h1>Error: no lists!</h1>`
-    document.getElementById("heading").innerHTML = `<h1>Error: no lists!</h1>`
+    document.getElementById("heading").innerHTML = `<h1>You must always have one list.</h1><p>Refresh the page to fix.</p>`
   }
 }
 
@@ -143,7 +143,7 @@ it puts them into a new object, coverted back to the old object. */
       WhichIndexList += 1
       if ((currentList = ListsObject[Object.keys(ListsObject)[WhichIndexList]]) == undefined){
         WhichIndexList = 0
-        error = True;
+        error = true;
       }
     }
     else{
