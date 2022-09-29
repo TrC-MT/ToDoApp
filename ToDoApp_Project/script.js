@@ -139,10 +139,8 @@ it puts them into a new object, coverted back to the old object. */
     }, {})
     //end of instructors code
 
-    if (WhichIndexList-1 == -1){
-      WhichIndexList += 1
-      if ((currentList = ListsObject[Object.keys(ListsObject)[WhichIndexList]]) == undefined){
-        WhichIndexList = 0
+    if ((WhichIndexList-1) == -1){
+      if (ListsObject[Object.keys(ListsObject)[WhichIndexList]] == undefined){
         error = true;
       }
     }
