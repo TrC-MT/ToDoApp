@@ -84,7 +84,7 @@ function render() {  //This function is what displays the lists and items on the
   else{ // if error == true;
     //render an error page
     document.getElementById("nav").innerHTML = `<h1>Error: no lists!</h1>`
-    document.getElementById("heading").innerHTML = `<h1>You must always have one list.</h1><p>Refresh the page to fix.</p>`
+    document.getElementById("heading").innerHTML = `<h1>You must always have one list.</h1><p>Click "Restore" to fix.</p>`
   }
 }
 
@@ -169,6 +169,7 @@ it puts them into a new object, coverted back to the old object. */
     function dataRestore(){
       currentList = JSON.parse(localStorage.getItem('currentList'))
       ListsObject = JSON.parse(localStorage.getItem('lists'))
+      error = false
       render();
     }
 //=========================================================================================
