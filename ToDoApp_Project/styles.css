@@ -50,9 +50,13 @@ nav{
     width: 95%;
     margin-bottom: 10px;
     margin-left: 3%;
-    font-size: 1.2vw;
+    font-size: 2em;
     color: #ffd700;
 }
+.list:hover{
+    color: #FFAA0D;
+}
+
 
 main{
     width: 80%;
@@ -125,6 +129,9 @@ button:hover{
     color: #D4B8D1;
     font-size: 1.5em;
     margin-bottom: 10px;
+}
+.item:hover{
+    color: #A18C9F;
 }
 
 

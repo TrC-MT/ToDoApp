@@ -149,11 +149,12 @@ it puts them into a new object, coverted back to the old object. */
     }
 
     currentList = ListsObject[Object.keys(ListsObject)[WhichIndexList]]
-
-
     render();
    }
 
+  function deleteItem(){
+    
+  }
 
 
    function save() {
