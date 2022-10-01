@@ -116,10 +116,30 @@ button:hover{
     width: 100%;
     font-size: 4em;
 }
+.changelistbuttons{
+    display: flex;
+    width: 80%;
+}
 .deleteList{
     font-size: 2em;
     margin-bottom: 20px;
 }
+.listnameEditbox{
+    width: 20%;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+}
+#NLN{
+    width: 100%;
+    height: 50%;
+    background-color: #D1284F;
+    font-size: 1em;
+}
+.changelistname{
+    height: 50%;
+}
+
 
 #items{
     margin-top: 30px;

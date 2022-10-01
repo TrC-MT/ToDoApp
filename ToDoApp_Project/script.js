@@ -62,7 +62,7 @@ function render() {  //This function is what displays the lists and items on the
 
     // Adding an event listener to the notNav
     let Ear = document.getElementById("notNav")
-    Ear.addEventListener('click', GrabValue)
+    Ear.addEventListener('click', GrabListValue)
 
 
     // print out the name of the current list
@@ -71,15 +71,20 @@ function render() {  //This function is what displays the lists and items on the
     // iterate over the todos in the current list
    
     let todosHtml = '<div class="notItems">';
+    var si = 0;
     currentList.items.forEach((list) => {
-      todosHtml += `<div class="item">${list.item}</div>`;
+      si += 1
+      todosHtml += `<div class="item" id="si${+ si}" data-whatitem="${si}">${list.item}</div>`;
     });
 
     todosHtml += `</div>`
     // print out the todos
     document.getElementById('items').innerHTML = todosHtml;
 
-    save();
+
+    //if (prompt("Do you want to save?").value  == 'y' || 'Y' || 'yes' || 'Yes'){
+      save();
+    // }
   }
   else{ // if error == true;
     //render an error page
@@ -121,7 +126,7 @@ function render() {  //This function is what displays the lists and items on the
    var WhichIndexList;
     // Warning! Global variable undefined here.
 
-   function GrabValue(evt){
+   function GrabListValue(evt){
       WhichList = evt.target.getAttribute("data-whatlist")
       WhichIndexList = WhichList - 1
       currentList = ListsObject[Object.keys(ListsObject)[WhichIndexList]]
@@ -152,8 +157,41 @@ it puts them into a new object, coverted back to the old object. */
     render();
    }
 
-  function deleteItem(){
+   function EditListName(){
+    currentList.name = document.getElementById('NLN').value
+    render();
+   }
+
+   let OtherEar = document.getElementById("items")
+    OtherEar.addEventListener('click', GrabItemValue)
+
+
+  //Warning: Global Variable!!!
+   var WhichIndexItem = 0;
+  //Warning: Global Variable!!!
+  function GrabItemValue(oevt){
+    WhichItem = oevt.target.getAttribute("data-whatitem")
+    WhichIndexItem = WhichItem - 1
+    console.log("WhichIndexItem grabbed.")
+
+   // for (i=0; i < currentList.items.length; i++){
+      //if (document.getElementById("si"+i).innerHTML //has <span class="selectedItemArrow">&lArr;</span>){
+          //delete '<span class="selectedItemArrow">&lArr;</span>'
+      //}
+   // }
+    document.getElementById("si"+WhichItem).innerHTML = document.getElementById("si"+WhichItem).innerHTML + '<span class="selectedItemArrow">&lArr;</span>'
     
+  }
+
+  function deleteItem(){
+    console.log("WhichIndexItem:")
+    console.log(WhichIndexItem)
+    console.log("currentList.items[WhichIndexItem]:")
+    console.log(currentList.items[WhichIndexItem])
+    // delete  currentList.items[WhichIndexItem]
+
+
+    // then render
   }
 
 

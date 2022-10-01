@@ -32,10 +32,17 @@
                 <div id="heading">
                     
                 </div>
-                <button class="deleteList" onclick="DeleteCurrentList()">Delete list</button>
+                <div class="changelistbuttons">
+                    <button class="deleteList" onclick="DeleteCurrentList()">Delete list</button>
+                    <div class="listnameEditbox">
+                        <input id="NLN" type="text" placeholder="Type the changed name here">
+                        <button class="changelistname" onclick="EditListName()">Rename</button>
+                    </div>
+                </div>
                 <div class="additems">
                     <input type="text" id="inputAddItems" placeholder="Type a new item here.">
                     <button onclick="AddItem()">ADD ITEM</button>
+                    <button onclick="deleteItem()">DELETE ITEM</button>
                 </div>
                 <div id="items">
                     <div class="item">
