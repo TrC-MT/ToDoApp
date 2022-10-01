@@ -19,15 +19,15 @@ listObject1:{
 //====================================================================================
 
 let ListsObject = {  //This is where the lists are stored
-  listObject1:{     //This is an example list
-    name: "Example List",  //This is what the list is called on the page
-    items: [  //This is where the items in the list are stored
-        {
-            item: "Example item one",  //This is an example item
-            completed: false,  
-        },
-    ]
-},
+  // listObject1:{     //This is an example list
+  //   name: "Example List",  //This is what the list is called on the page
+  //   items: [  //This is where the items in the list are stored
+  //       {
+  //           item: "Example item one",  //This is an example item
+  //           completed: false,  
+  //       },
+  //   ]
+  // },
 }
 
 //----------------------------------------------------------------
@@ -37,8 +37,8 @@ var ListObjectKeyname = "a0";  //This is what initially sets up what the lists a
 
 var error = false;
 
-alert("About to render!")
-render();   //It starts of by rendering the page
+// alert("About to render!")
+// render();   //It starts of by rendering the page
 
 //------------------------------------------------------------------------
 
