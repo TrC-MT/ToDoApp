@@ -139,6 +139,12 @@ button:hover{
 .changelistname{
     height: 50%;
 }
+.deleteCompletedItems{
+    height: 30px;
+    font-size: 1.2em;
+    margin-top: 5px;
+    margin-left: 1.2%;
+}
 
 
 #items{
