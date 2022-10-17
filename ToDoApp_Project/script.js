@@ -172,7 +172,6 @@ it puts them into a new object, coverted back to the old object. */
   function GrabItemValue(oevt){
     WhichItem = oevt.target.getAttribute("data-whatitem")
     WhichIndexItem = WhichItem - 1
-    console.log("WhichIndexItem grabbed.")
 
    for (var i=1; i < currentList.items.length+1; i++){
       if (document.getElementById("si"+i).innerHTML.includes(`<span class="selectedItemArrow">⇐</span>`)){
@@ -185,14 +184,8 @@ it puts them into a new object, coverted back to the old object. */
   }
 
   function deleteItem(){
-    console.log("WhichIndexItem:")
-    console.log(WhichIndexItem)
-    console.log("currentList.items[WhichIndexItem]:")
-    console.log(currentList.items[WhichIndexItem])
-    //Somehow delete  currentList.items[WhichIndexItem]
     for(var i = 0; i < currentList.items.length; i++){
       if(currentList.items[i] == currentList.items[WhichIndexItem]){
-        //Somehow set the currentList.items to itself without the WhichIndexItem
         for(var j = i; j < currentList.items.length; j++){
           if(currentList.items[j+1] != null){
             currentList.items[j] = currentList.items[j+1]
