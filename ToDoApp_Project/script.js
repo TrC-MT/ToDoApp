@@ -242,6 +242,7 @@ it puts them into a new object, coverted back to the old object. */
     function dataDelete(){
       localStorage.removeItem('currentList')
       localStorage.removeItem('lists')
+      localStorage.removeItem('ListObjectKeyname')
     }
     function dataRestore(){
       currentList = JSON.parse(localStorage.getItem('currentList'))
