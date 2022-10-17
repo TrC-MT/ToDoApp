@@ -174,13 +174,13 @@ it puts them into a new object, coverted back to the old object. */
     WhichIndexItem = WhichItem - 1
     console.log("WhichIndexItem grabbed.")
 
-  //  for (i=0; i < currentList.items.length; i++){
-  //     if (document.getElementById("si"+i).innerHTML.includes(`<span class="selectedItemArrow">&lArr;</span>`)){ //The .innerHTML is what's returning null,error
-  //       console.log('Ran the remove arrow if statement.')
-  //         // delete '<span class="selectedItemArrow">&lArr;</span>'
-  //     }
-  //  }
-    document.getElementById("si"+WhichItem).innerHTML = document.getElementById("si"+WhichItem).innerHTML + '<span class="selectedItemArrow">&lArr;</span>'
+   for (var i=1; i < currentList.items.length; i++){
+      if (document.getElementById("si"+i).innerHTML.includes(`<span class="selectedItemArrow">⇐</span>`)){
+        console.log('Ran the remove arrow if statement.')
+          // delete '<span class="selectedItemArrow">&lArr;</span>'
+      }
+   }
+    document.getElementById("si"+WhichItem).innerHTML = document.getElementById("si"+WhichItem).innerHTML + '  <span class="selectedItemArrow">&lArr;</span>'
     
   }
 
@@ -189,7 +189,7 @@ it puts them into a new object, coverted back to the old object. */
     console.log(WhichIndexItem)
     console.log("currentList.items[WhichIndexItem]:")
     console.log(currentList.items[WhichIndexItem])
-    // delete  currentList.items[WhichIndexItem]
+    //Somehow delete  currentList.items[WhichIndexItem]
     for(var i = 0; i < currentList.items.length; i++){
       if(currentList.items[i] != currentList.items[WhichIndexItem]){
         //Somehow set the currentList.items to itself without the WhichIndexItem
