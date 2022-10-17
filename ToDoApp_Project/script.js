@@ -210,6 +210,26 @@ it puts them into a new object, coverted back to the old object. */
     render();
   }
 
+  function CID(){ //Completed Items Delete
+    for(var i = 0; i < currentList.items.length; i++){
+      console.log(i)
+      console.log(currentList.items[i].item)
+      if(currentList.items[i].item.includes(`<span class="completedItemcheck">&#10003</span>   `)){
+        for(var j = i; j < currentList.items.length; j++){
+          if(currentList.items[j+1] != null){
+            currentList.items[j] = currentList.items[j+1]
+          }
+          else{
+            currentList.items.pop()
+          }
+          
+        }
+      }
+      
+    }
+    render();
+  }
+
 
    function save() {
     localStorage.setItem('currentList', JSON.stringify(currentList)); 
