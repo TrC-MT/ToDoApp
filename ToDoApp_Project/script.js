@@ -191,13 +191,22 @@ it puts them into a new object, coverted back to the old object. */
     console.log(currentList.items[WhichIndexItem])
     //Somehow delete  currentList.items[WhichIndexItem]
     for(var i = 0; i < currentList.items.length; i++){
-      if(currentList.items[i] != currentList.items[WhichIndexItem]){
+      if(currentList.items[i] == currentList.items[WhichIndexItem]){
         //Somehow set the currentList.items to itself without the WhichIndexItem
+        for(var j = i; j < currentList.items.length; j++){
+          if(currentList.items[j+1] != null){
+            currentList.items[j] = currentList.items[j+1]
+          }
+          else{
+            currentList.items.pop()
+          }
+          
+        }
       }
       
     }
 
-    // then render
+    render();
   }
 
 
