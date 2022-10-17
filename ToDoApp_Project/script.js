@@ -174,11 +174,12 @@ it puts them into a new object, coverted back to the old object. */
     WhichIndexItem = WhichItem - 1
     console.log("WhichIndexItem grabbed.")
 
-   // for (i=0; i < currentList.items.length; i++){
-      //if (document.getElementById("si"+i).innerHTML //has <span class="selectedItemArrow">&lArr;</span>){
-          //delete '<span class="selectedItemArrow">&lArr;</span>'
-      //}
-   // }
+  //  for (i=0; i < currentList.items.length; i++){
+  //     if (document.getElementById("si"+i).innerHTML.includes(`<span class="selectedItemArrow">&lArr;</span>`)){ //The .innerHTML is what's returning null,error
+  //       console.log('Ran the remove arrow if statement.')
+  //         // delete '<span class="selectedItemArrow">&lArr;</span>'
+  //     }
+  //  }
     document.getElementById("si"+WhichItem).innerHTML = document.getElementById("si"+WhichItem).innerHTML + '<span class="selectedItemArrow">&lArr;</span>'
     
   }
