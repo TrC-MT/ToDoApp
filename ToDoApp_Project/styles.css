@@ -154,6 +154,9 @@ button:hover{
     color: #A18C9F;
 }
 
+.completedItemcheck{
+    color: #51D85F;
+}
 
 h1, p{
     color: #FF003B;

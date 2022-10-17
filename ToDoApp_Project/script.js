@@ -202,6 +202,14 @@ it puts them into a new object, coverted back to the old object. */
     render();
   }
 
+  function completeItem(){
+    currentList.items[WhichIndexItem].completed = true
+    console.log(currentList.items[WhichIndexItem].item)
+    currentList.items[WhichIndexItem].item = `<span class="completedItemcheck">&#10003</span>   ` + currentList.items[WhichIndexItem].item
+    console.log(currentList.items[WhichIndexItem].item)
+    render();
+  }
+
 
    function save() {
     localStorage.setItem('currentList', JSON.stringify(currentList)); 
