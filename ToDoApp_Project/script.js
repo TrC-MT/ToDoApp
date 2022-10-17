@@ -190,7 +190,12 @@ it puts them into a new object, coverted back to the old object. */
     console.log("currentList.items[WhichIndexItem]:")
     console.log(currentList.items[WhichIndexItem])
     // delete  currentList.items[WhichIndexItem]
-
+    for(var i = 0; i < currentList.items.length; i++){
+      if(currentList.items[i] != currentList.items[WhichIndexItem]){
+        //Somehow set the currentList.items to itself without the WhichIndexItem
+      }
+      
+    }
 
     // then render
   }
