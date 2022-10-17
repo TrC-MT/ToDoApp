@@ -228,6 +228,11 @@ it puts them into a new object, coverted back to the old object. */
     render();
   }
 
+  function EditItemName(){
+    currentList.items[WhichIndexItem].item = document.getElementById('NIN').value
+    render();
+  }
+
 
    function save() {
     localStorage.setItem('currentList', JSON.stringify(currentList)); 

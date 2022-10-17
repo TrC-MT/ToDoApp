@@ -70,6 +70,9 @@ main{
 .addlists, .additems{
     width: 100%;
 }
+.additems{
+    display: flex;
+}
 
 
 input{
@@ -124,19 +127,19 @@ button:hover{
     font-size: 2em;
     margin-bottom: 20px;
 }
-.listnameEditbox{
+.nameEditbox{
     width: 20%;
     height: 40px;
     display: flex;
     flex-direction: column;
 }
-#NLN{
+.nameEditInput{
     width: 100%;
     height: 50%;
     background-color: #D1284F;
     font-size: 1em;
 }
-.changelistname{
+.changeNameButton{
     height: 50%;
 }
 .deleteCompletedItems{

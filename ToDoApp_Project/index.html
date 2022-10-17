@@ -34,15 +34,19 @@
                 </div>
                 <div class="changelistbuttons">
                     <button class="deleteList" onclick="DeleteCurrentList()">Delete list</button>
-                    <div class="listnameEditbox">
-                        <input id="NLN" type="text" placeholder="Type the changed name here">
-                        <button class="changelistname" onclick="EditListName()">Rename</button>
+                    <div class="nameEditbox">
+                        <input id="NLN" class="nameEditInput" type="text" placeholder="Type the changed name here">
+                        <button class="changeNameButton" onclick="EditListName()">Rename list</button>
                     </div>
                     <button class="deleteCompletedItems" onclick="CID()">DELETE COMPLETED ITEMS</button>
                 </div>
                 <div class="additems">
                     <input type="text" id="inputAddItems" placeholder="Type a new item here.">
                     <button onclick="AddItem()">ADD ITEM</button>
+                    <div class="nameEditbox">
+                        <input type="text" id="NIN" class="nameEditInput" placeholder="Type the changed name here">
+                        <button class="changeNameButton" onclick="EditItemName()">RENAME ITEM</button>
+                    </div>
                     <button onclick="deleteItem()">DELETE ITEM</button>
                     <button onclick="completeItem()">COMPLETE ITEM</button>
                 </div>
