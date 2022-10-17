@@ -237,6 +237,7 @@ it puts them into a new object, coverted back to the old object. */
    function save() {
     localStorage.setItem('currentList', JSON.stringify(currentList)); 
     localStorage.setItem('lists', JSON.stringify(ListsObject));
+    localStorage.setItem('ListObjectKeyname', JSON.stringify(ListObjectKeyname));
    }
     function dataDelete(){
       localStorage.removeItem('currentList')
@@ -245,6 +246,7 @@ it puts them into a new object, coverted back to the old object. */
     function dataRestore(){
       currentList = JSON.parse(localStorage.getItem('currentList'))
       ListsObject = JSON.parse(localStorage.getItem('lists'))
+      ListObjectKeyname = JSON.parse(localStorage.getItem('ListObjectKeyname'))
       error = false
       render();
     }
