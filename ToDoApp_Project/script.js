@@ -174,10 +174,10 @@ it puts them into a new object, coverted back to the old object. */
     WhichIndexItem = WhichItem - 1
     console.log("WhichIndexItem grabbed.")
 
-   for (var i=1; i < currentList.items.length; i++){
+   for (var i=1; i < currentList.items.length+1; i++){
       if (document.getElementById("si"+i).innerHTML.includes(`<span class="selectedItemArrow">⇐</span>`)){
-        console.log('Ran the remove arrow if statement.')
-          // delete '<span class="selectedItemArrow">&lArr;</span>'
+          var Splinters = document.getElementById("si"+i).innerHTML.split(`  <span class="selectedItemArrow">⇐</span>`)
+          document.getElementById("si"+i).innerHTML = Splinters[0]
       }
    }
     document.getElementById("si"+WhichItem).innerHTML = document.getElementById("si"+WhichItem).innerHTML + '  <span class="selectedItemArrow">&lArr;</span>'
