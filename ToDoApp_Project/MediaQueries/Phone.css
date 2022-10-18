@@ -9,13 +9,4 @@
     main{
         width: 100%;
     }
-    .additems{
-        flex-direction: column;
-    }
-    .nameEditbox{
-        width: 100%;
-    }
-    .deleteCompletedItems{
-        height: 70px;
-    }
 }
