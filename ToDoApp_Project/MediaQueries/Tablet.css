@@ -8,5 +8,8 @@
     .nameEditbox{
         width: 100%;
     }
+    .changeNameButton{
+        height: 32px;
+    }
 
 }
