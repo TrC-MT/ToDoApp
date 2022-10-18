@@ -1,0 +1,21 @@
+@media (max-width: 615px) {
+    .container{
+        display: flex;
+        flex-direction: column;
+    }
+    .left{
+        width: 100%;
+    }
+    main{
+        width: 100%;
+    }
+    .additems{
+        flex-direction: column;
+    }
+    .nameEditbox{
+        width: 100%;
+    }
+    .deleteCompletedItems{
+        height: 70px;
+    }
+}
